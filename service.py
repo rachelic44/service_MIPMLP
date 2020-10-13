@@ -4,10 +4,14 @@ from create_otu_and_mapping_files import CreateOtuAndMappingFiles
 preprocess_prms = {'taxonomy_level': 6, 'taxnomy_group': 'sub PCA', 'epsilon': 0.1,
                      'normalization': 'log', 'z_scoring': 'row', 'norm_after_rel': 'No',
                      'std_to_delete': 0, 'pca': (0, 'PCA')}
-
+'''
+taxonomy_level 4-7 , taxnomy_group : sub PCA, mean, sum , epsilon: 0-1 
+z_scoring: row, col, both , 'pca': (0, 'PCA') second element always PCA. first is 0/1 
+normalization: log, relative , norm_after_rel: No, relative
+'''
 otu_file = sys.argv[1]
 tag_file = sys.argv[2]
-task_name = sys.argv[3]
+task_name = sys.argv[3] # Mucositis
  
 mapping_file = CreateOtuAndMappingFiles(otu_file, tag_file)
 mapping_file.preprocess(preprocess_params=preprocess_prms, visualize=False)
