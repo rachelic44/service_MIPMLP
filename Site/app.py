@@ -2,13 +2,9 @@ import os
 from flask import Flask, redirect
 import click
 
-PICS_FOLDER = os.path.join('Site', 'preprocess_plots')
 
 app = Flask(__name__, instance_relative_config=True)
 app.config.from_mapping(SECRET_KEY='dev')
-app.config['UPLOAD_FOLDER'] = PICS_FOLDER
-
-full_filename = os.path.join(app.config['UPLOAD_FOLDER'], 'correlation_heatmap_patient.png')
 
 @app.after_request
 def add_header(r):
@@ -25,9 +21,7 @@ def add_header(r):
 
 @app.route('/')
 def home():
-    print(PICS_FOLDER)
-    print(full_filename)
-    return redirect('/mipmlp/Home')
+    return redirect('/Home')
 
 
 from Site import site_service
@@ -35,4 +29,4 @@ from Site import site_service
 app.register_blueprint(site_service.bp)
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0')
+    app.run(debug=False, host='0.0.0.0')

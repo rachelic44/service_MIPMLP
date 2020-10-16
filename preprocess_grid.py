@@ -32,7 +32,7 @@ def preprocess_data(data, dict_params, map_file, visualize_data=False):
     as_data_frame = fill_taxonomy(as_data_frame, tax_col=taxonomy_col)
 
     if visualize_data: # prepare folder for visualization
-        folder = "preprocess_plots"
+        folder = "static"
         if not os.path.exists(folder):
             os.mkdir(folder)
         plt.figure('Preprocess') # make preprocessing figure
