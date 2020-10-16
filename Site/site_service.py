@@ -47,7 +47,7 @@ def home_page():
 
         images_names = [
             'Site\preprocess_plots\correlation_heatmap_patient.png',
-            'Site\preprocess_plots\Correlation_between_each_component_and_the_labelprognosistask.svg',
+            'Site/preprocess_plots/Correlation_between_each_component_and_the_labelprognosistask.svg',
             'Site/preprocess_plots/Correlation_between_each_component_and_the_labelprognosistask.svg',
             'Site/preprocess_plots/correlation_heatmap_patient.png',
             'Site/preprocess_plots/correlation_heatmap_bacteria.png',
