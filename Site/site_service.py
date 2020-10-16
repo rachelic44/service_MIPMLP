@@ -2,6 +2,7 @@ from flask import (
     Blueprint, flash, g, redirect, render_template, request, session, url_for
 )
 
+import service
 
 bp = Blueprint('mipmlp', __name__, url_prefix='/mipmlp')
 
@@ -25,7 +26,7 @@ def home_page():
         params = {'taxonomy_level': taxonomy_level, 'taxnomy_group': taxnomy_group, 'epsilon': epsilon,
                   'normalization': normalization, 'z_scoring': z_scoring, 'norm_after_rel': norm_after_rel,
                   'std_to_delete': 0, 'pca': (PCA, 'PCA')}
-        # service.evaluate(params)
+        service.evaluate(params)
         #
         # # create a ZipFile object
         # with ZipFile('sampleDir.zip', 'w') as zipObj:
