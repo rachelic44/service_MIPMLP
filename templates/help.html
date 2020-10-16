@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Explanation:</h1>
+<section class="content">
+  <header>
+  <p>After entering the required parameters, which are amino acid sequence or HLA name and the chosen weighting method,
+    the calculated weight of the amino acid sequence will be shown.</p>
+    <p>In addition, the weight will placed on a histogram based on existing data from the database, and it's bar will be marked in yellow. </p>
+  </header>
+</section>
+
+  <h1>How to use:</h1>
+<section class="content">
+  <header>
+  <p>Enter amino acid - sequence of 183 upper case letters, or a HLA name of amino acid.</p>
+    <p>NOTE: If your input contains both sequence and HLA name, the sequence will be ignored! i.e. the result will be determined only by the HLA name.</p>
+    <p>Finally, choose weighting method, and press on  the "calculate" button. </p>
+    <p>If you will enter only HLA name, the amino acid sequence will be found from the amino sequences database, and shown in the text box.</p>
+    <p>If you will enter only amino acid sequence, if it exist in the database, the HLA name will be found and shown in the text box. If not, the text box will stay empty.</p>
+  </header>
+</section>
+{% endblock %}
